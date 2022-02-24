@@ -1,46 +1,42 @@
-# Getting Started with Create React App
+# Technical assignment for the web developer role at Soundtrack Your Brand
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Visit the deployed application [here](https://syb-pedro.netlify.app/). Developed by Pedro Brás
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## To run the application
+
+Clone the repository
+
+In the project directory, run:
+
+### `yarn install`
+
+Once the installation is complete run:
 
 ### `yarn start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+---
 
-### `yarn test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Section with 'Trending' tracks that basically calls on the `mockScrobble` function to return a random track from the given list. It includes a button to re-fetch another random track, and a 'Add to queue' dummy button
 
-### `yarn build`
+- 'Recently played' section using the `fetchHistory` function with a table showing the last tracks played on the given Zone. This table is automatically updated when a new track is played.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- A 'Playing Now' section that is subscribing to the the given WebSocket connection. This element updates whenever the music playing changes. It also has the possibility to expand into kiosk mode.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Dark mode
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Note that some elements like the search bar and the play/pause and Add to queue buttons don't have any functionality, they were added for UI enhancement purposes
 
-### `yarn eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Dependencies
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Application built with [React](https://reactjs.org/) written in [Typescript](https://www.typescriptlang.org/)
+- Using the [MaterialUI](https://mui.com/) component and icon libraries with [Emotion](https://emotion.sh/docs/introduction) styling capabilities
+- Application state management is handled with [Zustand](https://github.com/pmndrs/zustand)
