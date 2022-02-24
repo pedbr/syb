@@ -110,7 +110,7 @@ const Trending = () => {
         open={isToastOpen}
         autoHideDuration={2000}
         onClose={() => setToastOpen(false)}
-        message='Scribble queued 🎉'
+        message='Scrobble queued 🎉'
       />
     </Box>
   )

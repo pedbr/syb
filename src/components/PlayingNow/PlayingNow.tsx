@@ -11,6 +11,7 @@ import GraphicEqIcon from '@mui/icons-material/GraphicEq'
 import PlayCircleIcon from '@mui/icons-material/PlayCircle'
 import PauseCircleIcon from '@mui/icons-material/PauseCircle'
 import OpenInFullIcon from '@mui/icons-material/OpenInFull'
+import FmdGoodIcon from '@mui/icons-material/FmdGood'
 
 import ScrobbleApi from '../../api/scrobble-api'
 import { Track } from '../../types'
@@ -50,11 +51,19 @@ const PlayingNow = () => {
           justifyContent={'space-between'}
           alignItems={'center'}
         >
-          <Stack direction={'row'} spacing={1}>
-            <GraphicEqIcon />
-            <Typography variant='body2' sx={{ color: palette.primary.main }}>
-              Playing now
-            </Typography>
+          <Stack direction={'row'} spacing={3}>
+            <Stack direction={'row'} spacing={1}>
+              <GraphicEqIcon />
+              <Typography variant='body2' sx={{ color: palette.primary.main }}>
+                Playing now
+              </Typography>
+            </Stack>
+            <Stack direction={'row'} spacing={1}>
+              <FmdGoodIcon />
+              <Typography variant='body2' sx={{ color: palette.primary.main }}>
+                Soundtrack HQ - Kitchen
+              </Typography>
+            </Stack>
           </Stack>
           <IconButton onClick={() => setKioskOpen(true)}>
             <OpenInFullIcon

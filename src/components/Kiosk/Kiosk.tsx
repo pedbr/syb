@@ -8,6 +8,7 @@ import { TransitionProps } from '@mui/material/transitions'
 import { Avatar, Box, Stack, useTheme } from '@mui/material'
 import { Track } from '../../types'
 import ArtistDisplay from '../PlayingNow/ArtistDisplay'
+import FmdGoodIcon from '@mui/icons-material/FmdGood'
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
@@ -67,9 +68,20 @@ const Kiosk = ({ open, setOpen, track }: Props) => {
             >
               {track.song_name}
             </Typography>
-            {track.artists.map(({ name, uri }) => (
-              <ArtistDisplay name={name} uri={uri} kiosk />
-            ))}
+            <Stack direction={'row'} spacing={2}>
+              {track.artists.map(({ name, uri }) => (
+                <ArtistDisplay name={name} uri={uri} kiosk />
+              ))}
+            </Stack>
+            <Stack direction={'row'} spacing={1}>
+              <FmdGoodIcon sx={{ color: palette.common.white }} />
+              <Typography
+                variant='caption'
+                sx={{ color: palette.common.white }}
+              >
+                Soundtrack HQ - Kitchen
+              </Typography>
+            </Stack>
           </Stack>
         </Stack>
       </Box>
