@@ -27,8 +27,6 @@ interface Props {
 const Kiosk = ({ open, setOpen, track }: Props) => {
   const { palette } = useTheme()
 
-  console.log('track', track)
-
   return (
     <Dialog
       fullScreen

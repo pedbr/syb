@@ -1,22 +1,25 @@
-import React, { useMemo } from 'react'
-import { Box, Typography, useTheme } from '@mui/material'
+import React, { useMemo, useState } from 'react'
+import { Box } from '@mui/material'
 
 import ScrobbleApi from '../api/scrobble-api'
 import { DEFAULT_ZONE_ID } from '../constants'
 
 import PlayingNow from '../components/PlayingNow'
+import Trending from '../components/Trending'
 
 const Player = () => {
   const api = useMemo(() => new ScrobbleApi(DEFAULT_ZONE_ID), [])
-  const { palette } = useTheme()
+  const initialScrobble = api.mockScrobble()
+
+  const [scrobble, setScrobble] = useState(initialScrobble)
 
   const fetchData = api.fetchHistory()
 
+  console.log('scrobble', initialScrobble)
+
   return (
     <Box pt={'75px'}>
-      <Typography variant='h1' sx={{ color: palette.text.primary }}>
-        Player
-      </Typography>
+      <Trending />
       <PlayingNow />
     </Box>
   )

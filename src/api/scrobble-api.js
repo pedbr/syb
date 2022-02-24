@@ -408,7 +408,7 @@ class ScrobbleApi {
   /**
    * Returns a mocked scrobble object.
    *
-   * @return {Object} Mocked scrobble object
+   * @return {Scrobble} Mocked scrobble object
    */
   mockScrobble() {
     const mock = MOCK_TRACKS[Math.floor(Math.random() * MOCK_TRACKS.length)]

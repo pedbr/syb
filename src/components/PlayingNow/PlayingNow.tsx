@@ -31,8 +31,6 @@ const PlayingNow = () => {
     api.subscribe(setPlayingNow)
   }, [api])
 
-  console.log(playingNow)
-
   if (!playingNow) {
     return (
       <PlayingNowContainer>
