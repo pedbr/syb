@@ -45,6 +45,7 @@ const Trending = () => {
           height: '300px',
           width: '300px',
           backgroundImage: `url(${scrobble.image_url})`,
+          backgroundSize: 'cover',
           borderRadius: '24px',
         }}
       >
@@ -59,7 +60,7 @@ const Trending = () => {
             borderRadius: '24px',
           }}
         >
-          <Typography variant='h2' sx={{ color: palette.text.primary }}>
+          <Typography variant='h2' sx={{ color: palette.primary.main }}>
             {scrobble.artists[0].name}
           </Typography>
           <Typography variant='h3' sx={{ color: palette.text.primary }}>
