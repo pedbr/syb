@@ -1,13 +1,12 @@
 import React from 'react'
+import AppContainer from './AppContainer'
 
 import ThemeConfig from './constants/ThemeConfig'
-
-import Player from './views/Player'
 
 function App() {
   return (
     <ThemeConfig>
-      <Player />
+      <AppContainer />
     </ThemeConfig>
   )
 }
