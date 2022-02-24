@@ -18,7 +18,10 @@ const ArtistDisplay = ({ uri, name, kiosk }: Props) => {
       />
       <Typography
         variant='caption'
-        sx={{ color: kiosk ? palette.common.white : palette.text.primary }}
+        sx={{
+          color: kiosk ? palette.common.white : palette.text.primary,
+          minWidth: 'fit-content',
+        }}
       >
         {name}
       </Typography>

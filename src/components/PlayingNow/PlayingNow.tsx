@@ -14,25 +14,25 @@ import OpenInFullIcon from '@mui/icons-material/OpenInFull'
 import FmdGoodIcon from '@mui/icons-material/FmdGood'
 
 import ScrobbleApi from '../../api/scrobble-api'
-import { Track } from '../../types'
 import { DEFAULT_ZONE_ID } from '../../constants'
 
 import PlayingNowContainer from './PlayingNowContainer'
 import Kiosk from '../Kiosk'
 import ArtistDisplay from './ArtistDisplay'
+import useStore from '../../store'
 
 const PlayingNow = () => {
   const [isPlay, setPlay] = useState(true)
   const [isKioskOpen, setKioskOpen] = useState(false)
   const { palette } = useTheme()
-  const [playingNow, setPlayingNow] = useState<Track | null>()
+  const { currentlyPlaying, setCurrentlyPlaying } = useStore()
   const api = useMemo(() => new ScrobbleApi(DEFAULT_ZONE_ID), [])
 
   useEffect(() => {
-    api.subscribe(setPlayingNow)
-  }, [api])
+    api.subscribe(setCurrentlyPlaying)
+  }, [api, setCurrentlyPlaying])
 
-  if (!playingNow) {
+  if (!currentlyPlaying) {
     return (
       <PlayingNowContainer>
         <Fragment>
@@ -80,7 +80,7 @@ const PlayingNow = () => {
         >
           <Stack alignItems={'center'} direction={'row'} spacing={2} mt={2}>
             <Avatar
-              src={playingNow?.image_url}
+              src={currentlyPlaying?.image_url}
               variant={'rounded'}
               sx={{ width: 72, height: 72 }}
             />
@@ -92,10 +92,10 @@ const PlayingNow = () => {
                 whiteSpace={'nowrap'}
                 overflow={'hidden'}
               >
-                {playingNow?.song_name || 'Waiting'}
+                {currentlyPlaying?.song_name || 'Waiting'}
               </Typography>
               <Stack direction={'row'} spacing={2}>
-                {playingNow?.artists.map(({ name, uri }) => (
+                {currentlyPlaying?.artists.map(({ name, uri }) => (
                   <ArtistDisplay name={name} uri={uri} />
                 ))}
               </Stack>
@@ -113,7 +113,11 @@ const PlayingNow = () => {
             )}
           </IconButton>
         </Stack>
-        <Kiosk open={isKioskOpen} setOpen={setKioskOpen} track={playingNow} />
+        <Kiosk
+          open={isKioskOpen}
+          setOpen={setKioskOpen}
+          track={currentlyPlaying}
+        />
       </Fragment>
     </PlayingNowContainer>
   )

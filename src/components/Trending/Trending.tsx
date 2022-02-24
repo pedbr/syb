@@ -22,9 +22,10 @@ interface Scrobble {
 }
 
 const Trending = () => {
-  const { palette, typography } = useTheme()
   const [isToastOpen, setToastOpen] = useState(false)
+  const { palette, typography } = useTheme()
   const { theme } = useStore()
+
   const api = useMemo(() => new ScrobbleApi(DEFAULT_ZONE_ID), [])
   const initialScrobble: Scrobble = api.mockScrobble()
 
