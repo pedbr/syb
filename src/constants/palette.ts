@@ -1,7 +1,7 @@
 // Setup Colors
 const PRIMARY = {
   dark: '#171738',
-  light: '#F1FFFA',
+  light: '#F4F5FE',
   main: '#FFBF00',
 }
 

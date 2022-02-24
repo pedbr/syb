@@ -1,9 +1,9 @@
 import React from 'react'
 import { Box, useTheme } from '@mui/material'
 
-import Navbar from './components/Navbar'
-
 import Player from './views/Player'
+
+import Navbar from './components/Navbar'
 
 const AppContainer = () => {
   const { palette } = useTheme()
