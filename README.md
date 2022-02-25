@@ -25,9 +25,9 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 - Section with 'Trending' tracks that basically calls on the `mockScrobble` function to return a random track from the given list. It includes a button to re-fetch another random track, and a 'Add to queue' dummy button
 
-- 'Recently played' section using the `fetchHistory` function with a table showing the last tracks played on the given Zone. This table is automatically updated when a new track is played.
+- 'Recently played' section using the `fetchHistory` function with a table showing the last tracks played on the given Zone. This table is automatically updated when a new track is played and it shows the relative time when the track was played.
 
-- A 'Playing Now' section that is subscribing to the the given WebSocket connection. This element updates whenever the music playing changes. It also has the possibility to expand into kiosk mode.
+- A 'Playing Now' section that is subscribing to the the given WebSocket connection. This element updates whenever the music playing changes. It also has the possibility to expand into kiosk mode. Both views include a fade in animation when the track changes.
 
 - Dark mode
 
@@ -41,3 +41,4 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 - Using the [MaterialUI](https://mui.com/) component and icon libraries with [Emotion](https://emotion.sh/docs/introduction) styling capabilities
 - Application state management is handled with [Zustand](https://github.com/pmndrs/zustand)
 - 'Recently played' relative time column is handled by [React Relative Time](https://github.com/aharshac/react-relative-time#readme)
+- Transition animations is achieved using [React Spring](https://react-spring.io/)
