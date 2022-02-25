@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect, useMemo, useState } from 'react'
 import {
   Avatar,
+  CircularProgress,
   IconButton,
   Skeleton,
   Stack,
@@ -36,7 +37,10 @@ const PlayingNow = () => {
     return (
       <PlayingNowContainer>
         <Fragment>
-          <Skeleton variant='text' width={'300px'} />
+          <Stack spacing={2} direction={'row'} alignItems={'center'}>
+            <CircularProgress color={'primary'} />
+            <Typography variant={'body2'}>Waiting for next track...</Typography>
+          </Stack>
           <Skeleton variant='text' width={'80%'} height={'120px'} />
         </Fragment>
       </PlayingNowContainer>
