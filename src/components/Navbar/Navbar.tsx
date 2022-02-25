@@ -28,7 +28,6 @@ const Navbar = () => {
       alignItems={'center'}
       justifyContent={'space-between'}
       sx={{
-        backdropFilter: 'blur(8px)',
         zIndex: 2,
       }}
     >
