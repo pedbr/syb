@@ -40,3 +40,4 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 - Application built with [React](https://reactjs.org/) written in [Typescript](https://www.typescriptlang.org/)
 - Using the [MaterialUI](https://mui.com/) component and icon libraries with [Emotion](https://emotion.sh/docs/introduction) styling capabilities
 - Application state management is handled with [Zustand](https://github.com/pmndrs/zustand)
+- 'Recently played' relative time column is handled by [React Relative Time](https://github.com/aharshac/react-relative-time#readme)

@@ -12,9 +12,11 @@ import {
   Typography,
   useTheme,
 } from '@mui/material'
+import RelativeTime from 'react-relative-time'
 
 import useStore from '../../store'
 import { millisToMinutesAndSeconds } from '../../utils'
+
 import ArtistDisplay from '../PlayingNow/ArtistDisplay'
 import TableCell from './TableCell'
 
@@ -45,6 +47,7 @@ const History = () => {
         <Table stickyHeader sx={{ minWidth: 650 }} aria-label='simple table'>
           <TableHead>
             <TableRow>
+              <TableCell head>{''}</TableCell>
               <TableCell head>Song</TableCell>
               <TableCell head>Artist</TableCell>
               <TableCell head>Time</TableCell>
@@ -58,6 +61,9 @@ const History = () => {
                 key={track.id}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
               >
+                <TableCell head>
+                  <RelativeTime value={track.created_at} />
+                </TableCell>
                 <TableCell component='th' scope='row'>
                   <Stack direction={'row'} alignItems={'center'} spacing={1}>
                     <Avatar src={track.image_url} variant={'rounded'} />
