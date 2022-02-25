@@ -37,9 +37,8 @@ const History = () => {
         sx={{
           maxHeight: 'calc(100vh - 400px)',
           borderRadius: '24px',
-          borderWidth: '3px',
-          borderStyle: 'solid',
           borderColor: palette.text.primary,
+          backgroundColor: palette.background.default,
         }}
         elevation={0}
       >

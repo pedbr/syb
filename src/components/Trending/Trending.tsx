@@ -55,16 +55,14 @@ const Trending = () => {
           sx={{
             height: '270px',
             backgroundColor:
-              theme === LIGHT_THEME
-                ? 'rgba(255,255,255, 0.6)'
-                : 'rgba(0,0,0, 0.8)',
+              theme === LIGHT_THEME ? 'rgba(0,0,0, 0.6)' : 'rgba(0,0,0, 0.8)',
             borderRadius: '24px',
           }}
         >
           <Typography variant='h2' sx={{ color: palette.primary.main }}>
             {scrobble.artists[0].name}
           </Typography>
-          <Typography variant='h3' sx={{ color: palette.text.primary }}>
+          <Typography variant='h3' sx={{ color: palette.common.white }}>
             {scrobble.song_name}
           </Typography>
         </Box>
@@ -74,7 +72,7 @@ const Trending = () => {
           variant={'outlined'}
           onClick={() => setScrobble(api.mockScrobble())}
           sx={{
-            fontFamily: typography.caption,
+            fontFamily: typography.button,
             borderRadius: '12px',
             borderWidth: '3px',
             borderColor: palette.primary.main,
@@ -93,7 +91,7 @@ const Trending = () => {
           onClick={() => setToastOpen(true)}
           sx={{
             color: palette.common.black,
-            fontFamily: typography.caption,
+            fontFamily: typography.button,
             borderRadius: '12px',
             textTransform: 'none',
             '&:hover': {

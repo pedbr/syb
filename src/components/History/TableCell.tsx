@@ -3,6 +3,7 @@ import {
   TableCellBaseProps,
   useTheme,
   TableCell as MuiTableCell,
+  Typography,
 } from '@mui/material'
 
 interface TableCellProps {
@@ -20,12 +21,12 @@ const TableCell = ({ children, component, scope, head }: TableCellProps) => {
         color: head ? palette.text.secondary : palette.text.primary,
         fontSize: head ? 12 : 14,
         maxWidth: '400px',
-        borderBottom: head ? '2px solid black' : 'none',
+        borderBottom: 'none',
       }}
       component={component}
       scope={scope}
     >
-      {children}
+      <Typography variant={'caption'}>{children}</Typography>
     </MuiTableCell>
   )
 }

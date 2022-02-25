@@ -20,19 +20,24 @@ const typography = {
     fontWeight: 700,
   },
   body1: {
-    fontFamily: 'Montserrat',
+    fontFamily: 'Be Vietnam Pro',
     fontSize: 20,
     fontWeight: 500,
   },
   body2: {
-    fontFamily: 'Montserrat',
+    fontFamily: 'Be Vietnam Pro',
     fontSize: 16,
     fontWeight: 500,
   },
   caption: {
-    fontFamily: 'Montserrat',
+    fontFamily: 'Be Vietnam Pro',
     fontSize: 14,
-    fontWeight: 500,
+    fontWeight: 300,
+  },
+  button: {
+    fontFamily: 'Be Vietnam Pro',
+    fontSize: 14,
+    fontWeight: 600,
   },
 }
 
